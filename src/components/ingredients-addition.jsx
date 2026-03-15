@@ -1,8 +1,13 @@
 export default function input(){
     return(
-        <section id="addition-of-items">
-            <input className="search-box" ></input>
-            <button className="search-box add-button" >Add Item</button>
-        </section>
+        <form id="form">
+            <input 
+            className="search-box"
+            type="text"
+            placeholder="eg. tomato"
+            aria-label="add-ingredient"
+            ></input>
+            <button className="search-box add-button" >+Add Ingredient</button>
+        </form>
     )
 }

@@ -1,5 +1,6 @@
 body{
   margin: 0px;
+  background-color: rgb(245, 233, 216);
 }
 
 #main-header{
@@ -33,16 +34,24 @@ body{
   border-radius: 10px;
   border-color: rgb(226, 199, 162);
   background-color: rgb(242, 236, 225);
+  box-shadow: 0px 2px 3px rgba(39, 37, 37, 0.43);
   border-style: groove;  
+  min-width: 150px;
+  max-width: 500px;
 }
 .add-button{
   background-color: rgb(230, 221, 175);
   color: black;
   font-family: 'Courier New', Courier, monospace;
   cursor: pointer;
-  border: 1px groove transparent;
+  border: 3px;
+  border-style: double;
   border-radius: 10px;
+  border-color: #786248;
+  box-shadow: 0px 2px 3px rgba(39, 37, 37, 0.43);
+
   transition: border-color 400ms ease, border-radius 400ms ease, background-color 400ms ease;
+  /* border */
 }
 
 .add-button:hover{
@@ -52,7 +61,7 @@ body{
 }
 
 
-#addition-of-items{
+#form{
   display: flex;
   justify-content: center;
 }

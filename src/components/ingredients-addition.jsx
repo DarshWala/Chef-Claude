@@ -1,17 +1,20 @@
-
+import React from "react";
 
 export default function input() {
+
     function submit(event) {
         event.preventDefault(); // stops page from refreshing on submit
         const formData = new FormData(event.currentTarget); // used to get form data
         const newIngredient = formData.get("ingredient-input");
-        // console.log({ newIngredient });
-        arr.push({newIngredient});
-        console.log({arr});
+
+        setIngredients( prevIngredient => [...prevIngredient , newIngredient] )
+
     }
 
-const arr = ["chicken", "aflhfdsjfhsfkuhsdfhuwfwufhwef", "chilli"];
-const ele = arr.map((ingredient) => <li key={ingredient}>{ingredient}</li>);
+const [ingredients , setIngredients] = React.useState([]);
+// const arr = []
+
+const ele = ingredients.map((ingredient) => <li key={ingredient}>{ingredient}</li>);
 
 
   return (
@@ -30,7 +33,6 @@ const ele = arr.map((ingredient) => <li key={ingredient}>{ingredient}</li>);
     
       <ul>
          {ele}
-
       </ul>
     </>
   );

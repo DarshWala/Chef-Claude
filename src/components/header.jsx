@@ -1,4 +1,4 @@
-import chef from "D:/reactProject/chef-claude/src/IMAGES/robotic.png"
+import chef from "../IMAGES/robotic.png"
 export default function Header(){
     return(
         <>

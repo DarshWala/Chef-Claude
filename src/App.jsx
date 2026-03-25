@@ -1,6 +1,6 @@
 import './App.css'
-import Header from 'D:/reactProject/chef-claude/src/components/header.jsx'
-import Ingredients from 'D:/reactProject/chef-claude/src/components/ingredients-addition'
+import Header from './components/header.jsx'
+import Ingredients from './components/ingredients-addition.jsx'
 
 function App() {
 

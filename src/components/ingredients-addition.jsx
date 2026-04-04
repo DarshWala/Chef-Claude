@@ -1,4 +1,6 @@
 import React from "react";
+import RecipeSec from "./recipeSection";
+import IngList from "./ingredientsList";
 
 export default function IngredientsAddition() {
   function addIngredient(formData) {
@@ -7,42 +9,21 @@ export default function IngredientsAddition() {
   }
 
   const [ingredients, setIngredients] = React.useState([]);
-  // const arr = []
+  const [recipeShown, setRecipeShown] = React.useState(false);
 
-  const ele = ingredients.map((ingredient) => (
-    <li key={ingredient}>{ingredient}</li>
-  ));
+  function toggleRecipeShown() {
+    setRecipeShown((prevShown) => !prevShown);
+  }
 
   return (
     <main>
-      <form action={addIngredient} id="form">
-        <input
-          name="ingredient-input"
-          className="search-box"
-          type="text"
-          placeholder="eg. tomato"
-          aria-label="add-ingredient"
-        ></input>
+      <IngList addIngredient={addIngredient} />
 
-        <button className="search-box add-button" type="submit">
-          + Add Ingredient
-        </button>
-
-      </form>
-
-      {ingredients.length > 0 &&  <section>
-        <h2>Ingredients on hand:</h2>
-        <ul className="ingredients-list" aria-live="polite">
-          {ele}
-        </ul>
-        {ingredients.length > 4 && <div className="get-recipe-container">
-          <div>
-            <h3>Ready for a recipe?</h3>
-            <p>Generate a recipe from your list of ingredients.</p>
-          </div>
-          <button>Get a recipe</button>
-        </div>}
-      </section>}
+      <RecipeSec
+        ingredients={ingredients}
+        recipeShown={recipeShown}
+        showRecipe={toggleRecipeShown}
+      />
     </main>
   );
 }

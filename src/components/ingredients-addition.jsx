@@ -1,6 +1,7 @@
 import React from "react";
 import RecipeSec from "./recipeSection";
 import IngList from "./ingredientsList";
+import { GetRecipeFromMistral } from "../../ai";
 
 export default function IngredientsAddition() {
   function addIngredient(formData) {
@@ -11,8 +12,9 @@ export default function IngredientsAddition() {
   const [ingredients, setIngredients] = React.useState([]);
   const [recipeShown, setRecipeShown] = React.useState(false);
 
-  function toggleRecipeShown() {
-    setRecipeShown((prevShown) => !prevShown);
+async function toggleRecipeShown() {
+    const recipeMarkdown = await GetRecipeFromMistral(ingredients)
+    console.log(recipeMarkdown)
   }
 
   return (

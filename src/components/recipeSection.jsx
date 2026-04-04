@@ -27,7 +27,7 @@ export default function RecipeSec(props) {
 
        {props.recipeShown && (
         <section>
-          <h2>Chef Claude Recommends:</h2>
+          {/* <h2>Chef Claude Recommends:</h2>
           <article className="suggested-recipe-container" aria-live="polite">
             <p>
               Based on the ingredients you have available, I would recommend
@@ -85,7 +85,9 @@ export default function RecipeSec(props) {
                 Parmesan cheese if desired.
               </li>
             </ol>
-          </article>
+          </article> */}
+
+          
         </section>
       )}
     </>
